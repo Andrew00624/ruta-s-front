@@ -11,6 +11,16 @@ class RouteContainer extends Component {
         routes:[]
     }
 
+
+  handleInputChange(e) {
+    this.setState({search: e.target.value, value: e.target.value})
+  }
+
+  handleSelectSuggest(suggest) {
+    console.log(suggest)
+    this.setState({search: "", value: suggest.formatted_address})
+  }
+
 createRoute = (e) =>{
     e.preventDefault()
     const {route} = this.state
@@ -31,6 +41,7 @@ onChange = (e) =>{
     const {route} = this.state
     route[field] = value 
     this.setState({route})
+    console.log(route)
 }
 
 
@@ -39,7 +50,6 @@ onChange = (e) =>{
         return (
             <div>
                 <RouteDisplay
-
                     route={route}
                     onSubmit={this.createRoute}
                     onChange={this.onChange}

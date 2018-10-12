@@ -13,10 +13,7 @@ class GoogleSuggest extends React.Component {
     category:{}
   }
 
-  componentWillMount(){
-    const location = JSON.parse(localStorage.getItem('location'))
-    this.setState({location})
-}
+
 
   handleInputChange(e) {
     this.setState({search: e.target.value, value: e.target.value})
@@ -27,9 +24,16 @@ class GoogleSuggest extends React.Component {
     this.setState({search: "", value: suggest.formatted_address})
   }
 
+  redirect = () => {
+    const {value} = this.state
+    localStorage.setItem('location',JSON.stringify(value))
+    this.props.history.push('/categories')
+  }
+
   render() {
     const {search, value} = this.state
     return (
+   
       <ReactGoogleMapLoader
         params={{
           key: API_KEY,
@@ -38,6 +42,7 @@ class GoogleSuggest extends React.Component {
         render={googleMaps =>
           googleMaps && (
             <div>
+                 <h1>En que ciudad quieres comer hoy?</h1>
               <ReactGooglePlacesSuggest
                 autocompletionRequest={{input: search}}
                 googleMaps={googleMaps}
@@ -49,6 +54,13 @@ class GoogleSuggest extends React.Component {
                   placeholder="Search a location"
                   onChange={this.handleInputChange.bind(this)}
                 />
+
+                < input
+                type="submit"
+                value="Buscar"
+                onClick={this.redirect}
+                />
+
               </ReactGooglePlacesSuggest>
             </div>
           )

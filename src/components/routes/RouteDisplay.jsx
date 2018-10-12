@@ -1,7 +1,8 @@
 import React from 'react'
 import {Input,Button} from 'antd'
 
-const RouteDisplay = ({onSubmit,onChange}) =>{
+
+const RouteDisplay = ({onSubmit,onChange,search,value}) =>{
     return (
         <div>
             <h2>Crear Ruta</h2>
@@ -88,6 +89,7 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
                    onChange={onChange} 
                    />
             </p> 
+
             <Button type="primary" htmlType="submit">Crear Ruta</Button>
             </form>
         </div>
