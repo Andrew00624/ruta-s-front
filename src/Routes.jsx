@@ -6,6 +6,7 @@ import RouteContainer from './components/routes/RouteContainer'
 import Profile from './components/auth/Profile'
 import RoutesList from './components/routes/RoutesList'
 import RoutesFilter from './components/routes/RoutesFilter'
+import RouteDetailContainer from './components/routes/RouteDetailContainer'
 import Categories from './components/routes/Categories'
 import Home from './components/Home'
 
@@ -20,6 +21,7 @@ const Routes = () => {
             <Route path="/profile" component={Profile} />
             <Route path="/routes-list" component={RoutesList} />
             <Route path="/filter-routes" component={RoutesFilter} />
+            <Route path="/route" component={RouteDetailContainer} />
         </Switch>
     )
 }

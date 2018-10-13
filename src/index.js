@@ -6,6 +6,12 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from 'react-router-dom'
 import 'antd/dist/antd.css'
 import 'toastr/build/toastr.css'
+import 'uikit/dist/css/uikit.min.css';
+import UIkit from 'uikit'
+import Icons from 'uikit/dist/js/uikit-icons'
+
+
+UIkit.use(Icons)
 
 const WithRouter = () => <BrowserRouter><App/></BrowserRouter>
 

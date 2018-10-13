@@ -3,25 +3,14 @@ import RouteDisplay from './RouteDisplay'
 import toastr from 'toastr'
 import axios from 'axios'
 
-
 class RouteContainer extends Component {
 
     state = {
         route:{},
-        routes:[]
+        routes:[],
     }
-
-
-  handleInputChange(e) {
-    this.setState({search: e.target.value, value: e.target.value})
-  }
-
-  handleSelectSuggest(suggest) {
-    console.log(suggest)
-    this.setState({search: "", value: suggest.formatted_address})
-  }
-
-createRoute = (e) =>{
+    
+    createRoute = (e) =>{
     e.preventDefault()
     const {route} = this.state
     axios.post('http://localhost:3000/create-route',route,{headers:{
@@ -53,7 +42,7 @@ onChange = (e) =>{
                     route={route}
                     onSubmit={this.createRoute}
                     onChange={this.onChange}
-                />
+                />   
             </div>
         )
     }

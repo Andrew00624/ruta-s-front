@@ -1,6 +1,46 @@
+.home-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 35%;
+    z-index: 5;
+}
+.home {
+    position: relative;
+    height: 100vh;
+    width:100vw;
+    margin:0;
+    padding:0;
+}
 
+#background-video{
+    width:100%;
+    height:100%;
+    background-size: cover;
+}
 
-body {
-    background-color: #000;
-    color:#fff;
+.home:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #fff;
+    z-index: 0;
+    opacity: 0.6;
+
+}
+
+.uk-search-large .uk-search-input {
+    background: #fff !important;
+}
+
+.uk-search-large .uk-search-icon {
+    height: 80px;
+}
+
+.uk-search-large {
+    width: 65% !important;
 }

@@ -28,12 +28,30 @@ class RoutesFilter extends Component {
         return (
            
             <div>
-                <h2>Rutas Disponibles</h2>
-                {routes.map((r, key)=>(<p key={key}>{r.title}</p>))}
-                {routes.map((r, key)=>(<p key={key}>{r.category}</p>))}
+                <div className="uk-container">
+                <h1>Rutas Disponibles</h1>
+
+                <div className="uk-card uk-card-default uk-width-1-2@m">
+                    <div className="uk-card-header">
+                        <div className="uk-grid-small uk-flex-middle" uk-grid='true'>
+                            <div className="uk-width-expand">
+                                <h3 className="uk-card-title uk-margin-remove-bottom">{routes.map((r, key)=>(<span key={key}>{r.title}</span>))}</h3>
+                                <p className="uk-text-meta uk-margin-remove-top">{routes.map((r, key)=>(<span key={key}>{r.category}</span>))}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="uk-card-body">
+                        <p>{routes.map((r, key)=>(<span key={key}>{r.description}</span>))}</p>
+                    </div>
+                    <div className="uk-card-footer">
+                    <p>{routes.map((r, key)=>(<span key={key}>{r.creador}</span>))}</p>
+                        <a href="#" className="uk-button uk-button-text">Read more</a>
+                    </div>
+                </div>
+                </div>
             </div>
 
-           
+
         )
     }
 }
