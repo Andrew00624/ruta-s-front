@@ -22,10 +22,11 @@
   color: #61dafb;
 }
 
-.categories-buttons {
-  display: flex;
-  justify-content: space-around;
+.uk-background-primary,.uk-button-primary {
+  background-color: #e54335 ;
 }
+
+ 
 
 
 

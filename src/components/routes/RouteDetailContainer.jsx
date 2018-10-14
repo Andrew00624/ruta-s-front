@@ -34,11 +34,7 @@ class RouteDetailContainer extends Component {
         const {routes} = this.state
         return (
             <div>
-
-            <h1>ruta detalle</h1>
-
                 <RouteDetailDisplay
-                
                 routes={routes} 
                 />
             </div>

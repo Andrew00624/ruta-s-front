@@ -1,0 +1,81 @@
+.inner-background  {
+    background-image: url(https://res.cloudinary.com/dqdpblijd/image/upload/v1539533427/ruta-s/background.jpg);
+    background-size:cover;
+    height: 50vh;
+    position:relative;
+    background-position: 50% 50%;
+
+}
+
+.inner-title{
+    position:absolute;
+    left: 0;
+    right:0;
+    top:45%;
+}
+.menu{
+    padding:30px;
+}
+
+.inner-background .logo {
+    width: 210px;
+    height: 70px;
+}
+
+.uk-card.uk-card-default {
+    border-radius: 15px;
+    margin:10px;
+
+}
+
+.section-image{
+    background-image: url(https://res.cloudinary.com/dqdpblijd/image/upload/v1539533427/ruta-s/background_categories.png);
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+.routes-cards .uk-grid,.routes-cards .uk-grid-medium>*,.routes-cards .uk-grid>* {
+    padding-left: 0;
+}
+
+
+.routes-cards .uk-grid {
+    margin-left: 0px;
+}
+
+
+.uk-card-default .uk-card-footer {
+    background: #e54335;
+    color: #fff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 10px 40px;
+}
+
+i {
+    font-size: 22px;
+}
+
+.route-stops {
+    min-height: 350px;
+    margin-top: -120px;
+    position: relative;
+    padding:40px;
+}
+
+.map-container {
+    padding-top: 80px;
+    position:relative !important;
+    height: 43vh;
+}
+
+
+
+
+
+
+@media (min-width: 960px){
+.uk-width-1-3\@m {
+    width: calc(95% * 1 / 3.001) !important;
+}
+}

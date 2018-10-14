@@ -1,11 +1,11 @@
-.home-content {
+.buscador-content {
     position: absolute;
     left: 0;
     right: 0;
     top: 35%;
     z-index: 5;
 }
-.home {
+.buscador {
     position: relative;
     margin:0;
     padding:0;
@@ -17,7 +17,8 @@
    
 }
 
-.home:after {
+/* 
+.buscador:after {
     content: '';
     display: block;
     position: absolute;
@@ -29,11 +30,7 @@
     z-index: 0;
     opacity: 0.6;
 
-}
-
-
-
-
+} */
 
 .uk-search-large .uk-search-input {
     background: #fff !important;

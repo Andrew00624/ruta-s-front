@@ -1,0 +1,51 @@
+ .home-background  {
+    background-image: url(https://res.cloudinary.com/dqdpblijd/image/upload/v1539533427/ruta-s/background.jpg);
+    background-size:cover;
+    height: 100vh;
+    position:relative;
+
+}
+.menu{
+    padding:30px;
+}
+
+.home-background .logo {
+    width: 210px;
+    height: 70px;
+}
+
+
+.hero-content{
+    position:absolute;
+    left:0;
+    right:0;
+    top:45%;
+}
+
+
+img.marker {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+    width:350px;
+}
+img.marker {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+#about .uk-flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.about-content{
+    text-align:left;
+}

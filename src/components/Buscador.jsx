@@ -42,8 +42,26 @@ class GoogleSuggest extends React.Component {
         }}
         render={googleMaps =>
           googleMaps && (
-            <div className="home">
-            <div className="home-content uk-container">
+            <div className="buscador">
+             <div className="home-background">
+              <div className="menu uk-container">
+                <div className="uk-position-relative">
+                      <div className="uk-position-top">
+                          <nav className="uk-navbar-container uk-navbar-transparent" uk-navbar="true">
+                              <img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  
+                              <div className="uk-navbar-right">
+                                  <ul className="uk-navbar-nav">
+                                      <li><a href="/about">Acerca de Nosotros</a></li>
+                                      <li><a href="/create-route">Crear Ruta</a></li>
+                                      <li><a href="/login">Login</a></li>
+                                  </ul>
+                              </div>
+                          </nav>
+                      </div>
+                </div>
+              </div>
+              </div>
+            <div className="buscador-content uk-container">
             <h1 className="uk-heading-primary">En que ciudad quieres comer hoy?</h1>
               <ReactGooglePlacesSuggest
                 autocompletionRequest={{input: search}}
@@ -70,9 +88,7 @@ class GoogleSuggest extends React.Component {
               </ReactGooglePlacesSuggest>
               </div>
 
-            <video className='uk-cover-container' id="background-video" uk-height-viewport="true" autoPlay loop muted>
-                <source uk-cover="true" src="https://res.cloudinary.com/dqdpblijd/video/upload/v1539394554/ruta-s/Coffee-Shot.mp4" type='video/mp4' />
-            </video>
+          
             </div>
           )
         }

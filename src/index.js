@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from 'react-router-dom'
@@ -9,6 +8,7 @@ import 'toastr/build/toastr.css'
 import 'uikit/dist/css/uikit.min.css';
 import UIkit from 'uikit'
 import Icons from 'uikit/dist/js/uikit-icons'
+import './index.css';
 
 
 UIkit.use(Icons)
