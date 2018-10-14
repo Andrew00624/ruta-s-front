@@ -11,6 +11,7 @@ class RouteDetailContainer extends Component {
 
     componentWillMount(){
         const {id} = this.props.match.params
+        console.log(id)
         this.getRouteInfo(id)
         
     }
@@ -33,6 +34,9 @@ class RouteDetailContainer extends Component {
         const {routes} = this.state
         return (
             <div>
+
+            <h1>ruta detalle</h1>
+
                 <RouteDetailDisplay
                 
                 routes={routes} 

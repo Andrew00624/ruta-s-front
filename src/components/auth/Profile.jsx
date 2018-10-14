@@ -51,6 +51,8 @@ class Profile extends Component{
                 <p>{user.email}</p>
                 <input accept="image/*" onChange={this.onChangeFile} ref="input" hidden type="file" />
                 <br/>
+                <img style={{cursor:"pointer"}} width="100" onClick={this.uploadPhoto} src="https://cdn.onlinewebfonts.com/svg/img_212908.png" />
+
             </div>
         )
     }

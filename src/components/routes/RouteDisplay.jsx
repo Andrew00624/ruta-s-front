@@ -24,6 +24,7 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
                    />
             </p> 
             <p>
+                <h3>Categoria</h3>
             <label htmlFor="tradicional">Tradicional</label>
                    <Input 
                    name="category"
@@ -76,7 +77,7 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
             <p>
                    <Input 
                    name="stops"
-                   placeholder="# de paradas"
+                   placeholder="Numero de paradas"
                    type="number"
                    onChange={onChange} 
                    />
@@ -84,7 +85,7 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
             <p>
                    <Input 
                    name="price"
-                   placeholder="Precio"
+                   placeholder="Precios"
                    type="number"
                    onChange={onChange} 
                    />
@@ -93,6 +94,46 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
                    <Input 
                    name="location"
                    placeholder="Ciudad"
+                   type="text"
+                   onChange={onChange} 
+                   />
+            </p> 
+            <p>
+                   <Input 
+                   name="restaurantList"
+                   placeholder="Parada #1"
+                   type="text"
+                   onChange={onChange} 
+                   />
+            </p> 
+            <p>
+                   <Input 
+                   name="restaurantList"
+                   placeholder="Parada #2"
+                   type="text"
+                   onChange={onChange} 
+                   />
+            </p> 
+            <p>
+                   <Input 
+                   name="restaurantList"
+                   placeholder="Parada #3"
+                   type="text"
+                   onChange={onChange} 
+                   />
+            </p> 
+            <p>
+                   <Input 
+                   name="restaurantList"
+                   placeholder="Parada #4"
+                   type="text"
+                   onChange={onChange} 
+                   />
+            </p> 
+            <p>
+                   <Input 
+                   name="restaurantList"
+                   placeholder="Parada #5"
                    type="text"
                    onChange={onChange} 
                    />

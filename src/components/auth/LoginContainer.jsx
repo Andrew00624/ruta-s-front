@@ -23,7 +23,7 @@ class LoginContainer extends Component {
             localStorage.setItem('user',JSON.stringify(res.data.user))
             localStorage.setItem('token',res.data.token)
             this.setState({loading:false})
-            this.props.history.push('/profile')
+            this.props.history.push('/buscador')
         })
         .catch (e=>toastr.error ('Error'))
         this.setState({loading:false})
