@@ -39,7 +39,7 @@ class Home extends Component {
                     <buton className="uk-button uk-button-large uk-button-primary">Registrarse</buton>
                 </div>
                 <div className="uk-width-1-2@m uk-text-right">
-                    <img className="marker" src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533427/ruta-s/_Group__copy.png" alt=""/>
+                    <img className="marker" src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539615940/iconlogo.png" alt=""/>
                 </div>
                 </div>
             </div>

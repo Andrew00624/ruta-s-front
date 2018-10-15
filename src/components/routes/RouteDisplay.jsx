@@ -1,5 +1,6 @@
 import React from 'react'
 import {Input,Button} from 'antd'
+import Autocomplete from 'react-google-autocomplete';
 
 const RouteDisplay = ({onSubmit,onChange}) =>{
 
@@ -76,7 +77,7 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
             </p> 
             <p>
                    <Input 
-                   name="stops"
+                   name="stopsQuantity"
                    placeholder="Numero de paradas"
                    type="number"
                    onChange={onChange} 
@@ -85,22 +86,26 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
             <p>
                    <Input 
                    name="price"
-                   placeholder="Precios"
-                   type="number"
-                   onChange={onChange} 
-                   />
-            </p> 
-            <p>
-                   <Input 
-                   name="location"
-                   placeholder="Ciudad"
+                   placeholder="Precio"
                    type="text"
                    onChange={onChange} 
                    />
             </p> 
             <p>
+            <Autocomplete
+              name="location"
+                        style={{width: '100%'}}
+                        onPlaceSelected={(place) => {
+                        localStorage.setItem('city', place.formatted_address)
+                        console.log(place);
+                        }}
+                        types={['(cities)']}
+                        
+            />  
+            </p> 
+            <p>
                    <Input 
-                   name="restaurantList"
+                   name="stops"
                    placeholder="Parada #1"
                    type="text"
                    onChange={onChange} 
@@ -108,7 +113,7 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
             </p> 
             <p>
                    <Input 
-                   name="restaurantList"
+                   name="stops"
                    placeholder="Parada #2"
                    type="text"
                    onChange={onChange} 
@@ -116,7 +121,7 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
             </p> 
             <p>
                    <Input 
-                   name="restaurantList"
+                   name="stops"
                    placeholder="Parada #3"
                    type="text"
                    onChange={onChange} 
@@ -124,7 +129,7 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
             </p> 
             <p>
                    <Input 
-                   name="restaurantList"
+                   name="stops"
                    placeholder="Parada #4"
                    type="text"
                    onChange={onChange} 
@@ -132,7 +137,7 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
             </p> 
             <p>
                    <Input 
-                   name="restaurantList"
+                   name="stops"
                    placeholder="Parada #5"
                    type="text"
                    onChange={onChange} 
@@ -146,4 +151,7 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
 }
 
 export default RouteDisplay
+
+
+
 

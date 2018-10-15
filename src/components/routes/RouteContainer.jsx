@@ -3,16 +3,23 @@ import RouteDisplay from './RouteDisplay'
 import toastr from 'toastr'
 import axios from 'axios'
 
+
+
+
 class RouteContainer extends Component {
 
     state = {
         route:{},
         routes:[],
+        city: ""
     }
+
     
     createRoute = (e) =>{
     e.preventDefault()
+    const city = localStorage.getItem('city')
     const {route} = this.state
+    route.location = city
     axios.post('http://localhost:3000/create-route',route,{headers:{
         'Authorization': localStorage.getItem('token')
     }})
@@ -36,6 +43,7 @@ onChange = (e) =>{
 
     render (){
         const {route} = this.state
+        console.log(this.state.city)
         return (
             <div>
                 <RouteDisplay
@@ -43,6 +51,8 @@ onChange = (e) =>{
                     onSubmit={this.createRoute}
                     onChange={this.onChange}
                 />   
+
+               
             </div>
         )
     }
