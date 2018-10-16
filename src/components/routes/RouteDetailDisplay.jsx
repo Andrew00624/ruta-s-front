@@ -4,9 +4,7 @@ import RestaurantMapContainer from  './RestaurantMapContainer'
 import '../../../src/routes.css';
 import {Link} from 'react-router-dom'
 
-const RouteDetailDisplay = ({routes,user}) =>{
-
-    
+const RouteDetailDisplay = ({routes,user,saveRoute}) =>{
     return (
         <div>
             <div className="inner-background">
@@ -24,7 +22,7 @@ const RouteDetailDisplay = ({routes,user}) =>{
                                   <li><Link to={"/how"}>Como Funciona?</Link></li>
                                       <li>{user.username}<span uk-icon="user"></span> 
                                       <div uk-dropdown="true pos:bottom-right"  >
-                                            <ul class="uk-nav uk-dropdown-nav">
+                                            <ul className="uk-nav uk-dropdown-nav">
                                                 <li><Link  to={"/profile"}>Mi perfil</Link></li>
                                                 <li><Link to={"/create-route"}>Crear Ruta</Link></li>
                                                 <li><Link to={"#"}>Cerrar Sesion</Link></li>
@@ -51,12 +49,12 @@ const RouteDetailDisplay = ({routes,user}) =>{
                         <h5>Locacion: {routes.location}</h5>
                         <h5>Precio: {routes.price}</h5>
                         <br/>
-                        <buton className="uk-button uk-button-large uk-button-primary" >Guardar Ruta</buton>
+                        <button className="uk-button uk-button-large uk-button-primary" onClick={saveRoute} >Guardar Ruta</button>
                     </div>
                     <div className="uk-width-1-2@m ">
                     <div className="uk-background-primary route-stops">
-                        <h3 clasName="uk-text-center">Lugares de ruta</h3>
-                        <ul clasName="uk-text-left">
+                        <h3 >Lugares de ruta</h3>
+                        <ul className="uk-text-left">
                             <li>{routes.stops}</li>
                         </ul>
                         </div>
@@ -73,7 +71,7 @@ const RouteDetailDisplay = ({routes,user}) =>{
                     <div className="uk-container">
                         <h1>Ejemplo</h1>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit alias sapiente tempora obcaecati nisi unde, optio perferendis nostrum odio maiores ex vero. Nesciunt autem quos quidem, esse suscipit alias at.</p>
-                        <buton className="uk-button uk-button-large uk-button-primary">Categories</buton>
+                        <button className="uk-button uk-button-large uk-button-primary">Categories</button>
                     </div>
               </section>
               <section className="uk-section-secondary">

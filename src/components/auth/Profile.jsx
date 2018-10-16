@@ -3,18 +3,21 @@ import logo from '../../logo.svg'
 import axios from 'axios'
 import toastr from 'toastr'
 import {uploadPic} from '../../services/userService'
+import {Link} from 'react-router-dom'
 
 
 class Profile extends Component{
 
     state = {
         user:{},
-        pics:[]
+        pics:[],
+        routes:[]    
     }
 
     componentWillMount(){
         const user = JSON.parse(localStorage.getItem('user'))
         if(!user) return this.props.history.push('/login')
+        this.getPrivateInfo()
         this.setState({user})
     }
 
@@ -26,6 +29,7 @@ class Profile extends Component{
         })
         .then(res=>{
             console.log(res)
+            this.setState({userREAL:res.data.user})
         })
         .catch(e=>toastr.error("algo falló", e.message))
     }
@@ -42,13 +46,21 @@ class Profile extends Component{
     }
 
     render(){
-        const {user} = this.state
+        const {user, userREAL} = this.state
+        console.log(userREAL)
+        if(userREAL === undefined) return <p>Loading ...</p>
         return(
             <div>
                 <img style={{borderRadius:'50%'}} src={user.photoURL || logo} width="200" alt="user"/>
                 <h1>{user.username}</h1>
                 <p>{user.about}</p>
                 <p>{user.email}</p>
+                {userREAL.routes.map((r,i)=>{
+                    return <div key={i}>
+                    <h4> <Link to={'/route/'+ r._id}> {r.title}</Link></h4>
+                    <span>{r.location}</span>
+                    </div>
+                })}
                 <input accept="image/*" onChange={this.onChangeFile} ref="input" hidden type="file" />
                 <br/>
                 <img style={{cursor:"pointer"}} width="100" onClick={this.uploadPhoto} src="https://cdn.onlinewebfonts.com/svg/img_212908.png" />

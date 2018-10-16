@@ -2,6 +2,7 @@ import React from 'react'
 import {Input,Button} from 'antd'
 import Autocomplete from 'react-google-autocomplete';
 
+
 const RouteDisplay = ({onSubmit,onChange}) =>{
 
     return (
@@ -101,6 +102,18 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
                         }}
                         types={['(cities)']}
                         
+            />  
+            </p> 
+
+            <p>
+            <Autocomplete
+              name="stops"
+                        style={{width: '100%'}}
+                        onPlaceSelected={(parada) => {
+                        localStorage.setItem('parada', parada.description)
+                        console.log(parada);
+                        }}
+                        types={['(establishment)']}  
             />  
             </p> 
             <p>

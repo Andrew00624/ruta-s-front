@@ -10,6 +10,7 @@ class GoogleMapsContainer extends React.Component {
       activeMarker: {},
       selectedPlace: {}
     }
+    
     // binding this to event-handler functions
     this.onMarkerClick = this.onMarkerClick.bind(this);
     this.onMapClick = this.onMapClick.bind(this);

@@ -4,16 +4,16 @@ import toastr from 'toastr'
 import axios from 'axios'
 
 
-
-
 class RouteContainer extends Component {
 
     state = {
         route:{},
         routes:[],
-        city: ""
+        city: "",
+        lugares:[]
     }
 
+    
     
     createRoute = (e) =>{
     e.preventDefault()
@@ -40,19 +40,24 @@ onChange = (e) =>{
     console.log(route)
 }
 
+onSuggestSelect(suggest) {
+    console.log(suggest);
+  }
+
 
     render (){
-        const {route} = this.state
+        const {route,lugares} = this.state
         console.log(this.state.city)
         return (
             <div>
                 <RouteDisplay
                     route={route}
+                    lugares={lugares}
                     onSubmit={this.createRoute}
                     onChange={this.onChange}
+                    onSuggestSelect={this.onSuggestSelect}
+                   
                 />   
-
-               
             </div>
         )
     }
