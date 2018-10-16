@@ -3,6 +3,7 @@ import React from "react"
 import ReactGoogleMapLoader from "react-google-maps-loader"
 import ReactGooglePlacesSuggest from "react-google-places-suggest"
 import '../../src/buscador.css';
+import {Link} from 'react-router-dom'
 
 
 const API_KEY = "AIzaSyB47Cyf6xOIxgFWi8-Y67geGWL6IpkjiDI"
@@ -12,8 +13,14 @@ class GoogleSuggest extends React.Component {
     search: "",
     value: "",
     location:{},
-    category:{}
+    category:{},
+    user:{}
   }
+
+  componentWillMount(){
+    const user = JSON.parse(localStorage.getItem('user'))
+    this.setState({user})
+}
 
   handleInputChange(e) {
     this.setState({search: e.target.value, value: e.target.value})
@@ -32,7 +39,7 @@ class GoogleSuggest extends React.Component {
 
 
   render() {
-    const {search, value} = this.state
+    const {search, value,user} = this.state
     return (
    
       <ReactGoogleMapLoader
@@ -51,9 +58,17 @@ class GoogleSuggest extends React.Component {
                               <img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  
                               <div className="uk-navbar-right">
                                   <ul className="uk-navbar-nav">
-                                      <li><a href="/about">Acerca de Nosotros</a></li>
-                                      <li><a href="/create-route">Crear Ruta</a></li>
-                                      <li><a href="/login">Login</a></li>
+                                  <li><Link to={"/about"}>Acerca de Nosotros</Link></li>
+                                  <li><Link to={"/how"}>Como Funciona?</Link></li>
+                                      <li>{user.username}<span uk-icon="user"></span> 
+                                      <div uk-dropdown="true pos:bottom-right"  >
+                                            <ul class="uk-nav uk-dropdown-nav">
+                                                <li><Link  to={"/profile"}>Mi perfil</Link></li>
+                                                <li><Link to={"/create-route"}>Crear Ruta</Link></li>
+                                                <li><Link to={"#"}>Cerrar Sesion</Link></li>
+                                            </ul>
+                                        </div>
+                                      </li>
                                   </ul>
                               </div>
                           </nav>

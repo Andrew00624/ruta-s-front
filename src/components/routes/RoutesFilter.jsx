@@ -1,16 +1,19 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import '../../../src/routes.css';
-
-
+import {Link} from 'react-router-dom'
+import Rating from "./Rating"
 
 
 class RoutesFilter extends Component {
     state = {
-        routes:[]
+        routes:[],
+        user:{}
     }
 
     componentWillMount(){
+        const user = JSON.parse(localStorage.getItem('user'))
+        this.setState({user})
         const cat = JSON.parse(localStorage.getItem('categories'))
         const location = JSON.parse(localStorage.getItem('location'))
         axios.get(`http://localhost:3000/filter-routes/?category=${cat}&location=${location}`, {
@@ -26,7 +29,7 @@ class RoutesFilter extends Component {
     }
 
     render (){
-        const {routes} = this.state
+        const {routes,user} = this.state
         return (
             <div>
                 <div className="inner-background">
@@ -36,16 +39,24 @@ class RoutesFilter extends Component {
                     <div className="menu uk-container">
                         <div className="uk-position-relative">
                             <div className="uk-position-top">
-                                <nav className="uk-navbar-container uk-navbar-transparent" uk-navbar="true">
-                                    <img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  
-                                    <div className="uk-navbar-right">
-                                        <ul className="uk-navbar-nav">
-                                            <li><a href="/about">Acerca de Nosotros</a></li>
-                                            <li><a href="/create-route">Crear Ruta</a></li>
-                                            <li><a href="/login">Login</a></li>
-                                        </ul>
-                                    </div>
-                                </nav>
+                            <nav className="uk-navbar-container uk-navbar-transparent" uk-navbar="true">
+                              <Link to={'/'}><img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  </Link>
+                              <div className="uk-navbar-right">
+                                  <ul className="uk-navbar-nav">
+                                  <li><Link to={"/about"}>Acerca de Nosotros</Link></li>
+                                  <li><Link to={"/how"}>Como Funciona?</Link></li>
+                                      <li>{user.username}<span uk-icon="user"></span> 
+                                      <div uk-dropdown="true pos:bottom-right"  >
+                                            <ul class="uk-nav uk-dropdown-nav">
+                                                <li><Link  to={"/profile"}>Mi perfil</Link></li>
+                                                <li><Link to={"/create-route"}>Crear Ruta</Link></li>
+                                                <li><Link to={"#"}>Cerrar Sesion</Link></li>
+                                            </ul>
+                                        </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </nav>
                          </div>
                     </div>
                 </div>
@@ -57,8 +68,12 @@ class RoutesFilter extends Component {
                                 <div className="uk-card-header">
                                     <div className="uk-flex-middle" uk-grid='true'>
                                         <div className="uk-width-expand">
-                                            <h3 className="uk-card-title uk-margin-remove-bottom">{routes.map((r, key)=>(<span key={key}>{r.title}</span>))}</h3>
-                                            <p className="uk-text-meta uk-margin-remove-top">{routes.map((r, key)=>(<span key={key}>{r.category}</span>))}</p>
+                                            <div>{routes.map((r, key)=>(<div key={key}>
+                                            <h2 className="uk-card-title uk-margin-remove-bottom">{r.title}</h2>
+                                            <Rating 
+                                                    />
+                                            <span>{r.category}</span>
+                                            </div>))}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -66,44 +81,9 @@ class RoutesFilter extends Component {
                                     <p>{routes.map((r, key)=>(<span key={key}>{r.description}</span>))}</p>
                                 </div>
                                 <div className="uk-card-footer">
-                                    <p>{routes.map((r, key)=>(<span key={key}>{r.creador}</span>))}</p>
-                                    <a href="#" className="uk-button uk-button-text">Read more</a>
-                                </div>
-                            </div>
-                            
-                            <div className="uk-width-1-3@m uk-card uk-card-default">
-                                <div className="uk-card-header">
-                                    <div className=" uk-flex-middle" uk-grid='true'>
-                                        <div className="uk-width-expand">
-                                            <h3 className="uk-card-title uk-margin-remove-bottom">{routes.map((r, key)=>(<span key={key}>{r.title}</span>))}</h3>
-                                            <p className="uk-text-meta uk-margin-remove-top">{routes.map((r, key)=>(<span key={key}>{r.category}</span>))}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="uk-card-body">
-                                    <p>{routes.map((r, key)=>(<span key={key}>{r.description}</span>))}</p>
-                                </div>
-                                <div className="uk-card-footer">
-                                    <p>{routes.map((r, key)=>(<span key={key}>{r.creador}</span>))}</p>
-                                    <a href="#" className="uk-button uk-button-text">Read more</a>
-                                </div>
-                            </div>
-
-                            <div className="uk-width-1-3@m uk-card uk-card-default">
-                                <div className="uk-card-header">
-                                    <div className=" uk-flex-middle" uk-grid='true'>
-                                        <div className="uk-width-expand">
-                                            <h3 className="uk-card-title uk-margin-remove-bottom">{routes.map((r, key)=>(<span key={key}>{r.title}</span>))}</h3>
-                                            <p className="uk-text-meta uk-margin-remove-top">{routes.map((r, key)=>(<span key={key}>{r.category}</span>))}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="uk-card-body">
-                                    <p>{routes.map((r, key)=>(<span key={key}>{r.description}</span>))}</p>
-                                </div>
-                                <div className="uk-card-footer">
-                                    <p>{routes.map((r, key)=>(<span key={key}>{r.creador}</span>))}</p>
-                                    <a href="#" className="uk-button uk-button-text">Read more</a>
+                                    <p>{routes.map((r, key)=>(<div key={key}>
+                                    <Link to={'/route/'+ r._id} >Ver mas</Link>
+                                    </div>))}</p>
                                 </div>
                             </div>
                 </div>

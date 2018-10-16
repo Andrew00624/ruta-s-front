@@ -2,8 +2,11 @@ import React from 'react'
 import Rating from "./Rating"
 import RestaurantMapContainer from  './RestaurantMapContainer'
 import '../../../src/routes.css';
+import {Link} from 'react-router-dom'
 
-const RouteDetailDisplay = ({routes}) =>{
+const RouteDetailDisplay = ({routes,user}) =>{
+
+    
     return (
         <div>
             <div className="inner-background">
@@ -13,16 +16,24 @@ const RouteDetailDisplay = ({routes}) =>{
                     <div className="menu uk-container">
                         <div className="uk-position-relative">
                             <div className="uk-position-top">
-                                <nav className="uk-navbar-container uk-navbar-transparent" uk-navbar="true">
-                                    <img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  
-                                    <div className="uk-navbar-right">
-                                        <ul className="uk-navbar-nav">
-                                            <li><a href="/about">Acerca de Nosotros</a></li>
-                                            <li><a href="/create-route">Crear Ruta</a></li>
-                                            <li><a href="/login">Login</a></li>
-                                        </ul>
-                                    </div>
-                                </nav>
+                            <nav className="uk-navbar-container uk-navbar-transparent" uk-navbar="true">
+                            <Link to={'/'}><img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  </Link>
+                              <div className="uk-navbar-right">
+                                  <ul className="uk-navbar-nav">
+                                  <li><Link to={"/about"}>Acerca de Nosotros</Link></li>
+                                  <li><Link to={"/how"}>Como Funciona?</Link></li>
+                                      <li>{user.username}<span uk-icon="user"></span> 
+                                      <div uk-dropdown="true pos:bottom-right"  >
+                                            <ul class="uk-nav uk-dropdown-nav">
+                                                <li><Link  to={"/profile"}>Mi perfil</Link></li>
+                                                <li><Link to={"/create-route"}>Crear Ruta</Link></li>
+                                                <li><Link to={"#"}>Cerrar Sesion</Link></li>
+                                            </ul>
+                                        </div>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </nav>
                          </div>
                     </div>
                 </div>
@@ -34,12 +45,20 @@ const RouteDetailDisplay = ({routes}) =>{
                         <h2>{routes.title}</h2>
                         <Rating 
                         />
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus unde fuga distinctio. Blanditiis ipsum perspiciatis quisquam dolorem corrupti saepe iure eligendi cupiditate totam cumque, repellendus fuga minus laborum suscipit voluptatem.</p>
-                        <buton className="uk-button uk-button-large uk-button-primary">Crear Ruta</buton>
+                        <p>{routes.description}</p>
+                        <h5>Numero de paradas: {routes.stopsQuantity}</h5>
+                        <h5>Categoria: {routes.category}</h5>
+                        <h5>Locacion: {routes.location}</h5>
+                        <h5>Precio: {routes.price}</h5>
+                        <br/>
+                        <buton className="uk-button uk-button-large uk-button-primary" >Guardar Ruta</buton>
                     </div>
-                    <div className="uk-width-1-2@m uk-text-center">
+                    <div className="uk-width-1-2@m ">
                     <div className="uk-background-primary route-stops">
-                        <h3>ksdhfdk</h3>
+                        <h3 clasName="uk-text-center">Lugares de ruta</h3>
+                        <ul clasName="uk-text-left">
+                            <li>{routes.stops}</li>
+                        </ul>
                         </div>
                     </div>
                 </div>
@@ -65,3 +84,5 @@ const RouteDetailDisplay = ({routes}) =>{
 }
 
 export default RouteDetailDisplay
+
+

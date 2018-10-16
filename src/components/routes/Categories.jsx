@@ -1,12 +1,19 @@
 import React, {Component} from 'react';
 import '../../../src/categories.css';
+import {Link} from 'react-router-dom'
 
  class Categories extends Component {
 
     state = {
         name:{},
         categories:{},
-        value:""
+        value:"",
+        user:{}
+    }
+
+    componentWillMount(){
+        const user = JSON.parse(localStorage.getItem('user'))
+        this.setState({user})
     }
 
     redirect = (val) => {
@@ -16,19 +23,28 @@ import '../../../src/categories.css';
       }
 
      render (){
+         const {user} = this.state
          return (
         <div>
             <div className="home-background">
               <div className="menu uk-container">
                 <div className="uk-position-relative">
                       <div className="uk-position-top">
-                          <nav className="uk-navbar-container uk-navbar-transparent" uk-navbar="true">
-                              <img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  
+                      <nav className="uk-navbar-container uk-navbar-transparent" uk-navbar="true">
+                      <Link to={'/'}><img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  </Link>
                               <div className="uk-navbar-right">
                                   <ul className="uk-navbar-nav">
-                                      <li><a href="/about">Acerca de Nosotros</a></li>
-                                      <li><a href="/create-route">Crear Ruta</a></li>
-                                      <li><a href="/login">Login</a></li>
+                                  <li><Link to={"/about"}>Acerca de Nosotros</Link></li>
+                                  <li><Link to={"/how"}>Como Funciona?</Link></li>
+                                      <li>{user.username}<span uk-icon="user"></span> 
+                                      <div uk-dropdown="true pos:bottom-right"  >
+                                            <ul class="uk-nav uk-dropdown-nav">
+                                                <li><Link  to={"/profile"}>Mi perfil</Link></li>
+                                                <li><Link to={"/create-route"}>Crear Ruta</Link></li>
+                                                <li><Link to={"#"}>Cerrar Sesion</Link></li>
+                                            </ul>
+                                        </div>
+                                      </li>
                                   </ul>
                               </div>
                           </nav>

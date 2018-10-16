@@ -6,15 +6,20 @@ import RouteDetailDisplay from './RouteDetailDisplay'
 class RouteDetailContainer extends Component {
 
     state = {
-        routes:{}
+        routes:{},
+        user:{}
     }
 
     componentWillMount(){
+        const user = JSON.parse(localStorage.getItem('user'))
+        this.setState({user})
         const {id} = this.props.match.params
         console.log(id)
         this.getRouteInfo(id)
         
     }
+
+  
 
     getRouteInfo = (id) =>{
         axios.get('http://localhost:3000/route/'+ id , {
@@ -31,11 +36,12 @@ class RouteDetailContainer extends Component {
 
 
     render (){
-        const {routes} = this.state
+        const {routes,user} = this.state
         return (
             <div>
                 <RouteDetailDisplay
                 routes={routes} 
+                user={user}
                 />
             </div>
         )

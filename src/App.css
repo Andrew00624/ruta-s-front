@@ -22,8 +22,13 @@
   color: #61dafb;
 }
 
-.uk-background-primary,.uk-button-primary {
-  background-color: #e54335 ;
+.uk-background-primary,.uk-button-primary,.uk-section-primary {
+  background-color: #e54335 !important ;
+}
+
+.App .logo {
+  width: 210px;
+  height: 70px;
 }
 
  

@@ -27,9 +27,9 @@ class RoutesList extends Component {
            
             <div>
                 <h2>las rutas</h2>
-                {routes.map((r, key)=>(
+                {routes?routes.map((r, key)=>(
                     <p key={key}>{r.title}</p>
-                ))}
+                )):''}
             </div>
 
            

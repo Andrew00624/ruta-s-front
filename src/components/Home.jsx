@@ -1,5 +1,6 @@
 import React , {Component} from 'react'
 import '../../src/home.css';
+import {Link} from 'react-router-dom'
 
 
 class Home extends Component {
@@ -14,9 +15,8 @@ class Home extends Component {
                               <img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  
                               <div className="uk-navbar-right">
                                   <ul className="uk-navbar-nav">
-                                      <li><a href="/about">Acerca de Nosotros</a></li>
-                                      <li><a href="/create-route">Crear Ruta</a></li>
-                                      <li><a href="/login">Login</a></li>
+                                      <li><Link to={"/login"}>Iniciar Sesion</Link></li>
+                                      <li><Link to={"/signup"}>Registrarse</Link></li>
                                   </ul>
                               </div>
                           </nav>
@@ -26,7 +26,7 @@ class Home extends Component {
               <div className="hero-content uk-container">
                   <h1>Recorridos Gastronomicos</h1>
                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat earum, doloribus in eos, temporibus dolorum eaque repudiandae ullam explicabo et eveniet rerum at ducimus odit, quibusdam placeat aspernatur quas excepturi.</p>
-                <buton className="uk-button uk-button-large uk-button-primary">Registrarse</buton>
+                <Link to={"/signup"} className="uk-button uk-button-large uk-button-primary" >Registrarse</Link>
               </div>
             </div>
 
@@ -36,7 +36,7 @@ class Home extends Component {
                 <div className="uk-width-1-2@m about-content">
                     <h2>Que es Ruta-S</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus unde fuga distinctio. Blanditiis ipsum perspiciatis quisquam dolorem corrupti saepe iure eligendi cupiditate totam cumque, repellendus fuga minus laborum suscipit voluptatem.</p>
-                    <buton className="uk-button uk-button-large uk-button-primary">Registrarse</buton>
+                    <Link to={"/signup"} className="uk-button uk-button-large uk-button-primary" >Registrarse</Link>
                 </div>
                 <div className="uk-width-1-2@m uk-text-right">
                     <img className="marker" src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539615940/iconlogo.png" alt=""/>

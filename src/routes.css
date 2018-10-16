@@ -69,6 +69,14 @@ i {
     height: 43vh;
 }
 
+.route-stops,.route-stops h3 {
+    color: #fff;
+}
+
+.route-stops li{
+    text-align:left;
+}
+
 
 
 
