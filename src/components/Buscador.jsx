@@ -77,14 +77,15 @@ class GoogleSuggest extends React.Component {
               </div>
               </div>
             <div className="buscador-content uk-container">
-            <h1 className="uk-heading-primary">En que ciudad quieres comer hoy?</h1>
+            <h1 >En que ciudad quieres comer hoy?</h1>
+            <br/>
               <ReactGooglePlacesSuggest
                 autocompletionRequest={{input: search}}
                 googleMaps={googleMaps}
                 onSelectSuggest={this.handleSelectSuggest.bind(this)}
               >
               <form className="uk-search uk-search-large">
-              <span uk-search-icon="true"></span>
+              
                 <input
                 className="uk-search-input"
                   type="text"

@@ -1,5 +1,4 @@
 import React from 'react'
-import {Input,Button} from 'antd'
 import Autocomplete from 'react-google-autocomplete';
 import {Link} from 'react-router-dom'
 
@@ -26,9 +25,11 @@ const RouteDisplay = ({saveLocation, onSubmit,onChange, handlePlace}) =>{
                 </div>
               </div>
               <div className="hero-content-ruta uk-container ruta">
-             
               <h2>Crear Ruta</h2>
-            <form onSubmit = {onSubmit} style={{width:600,margin:'0 auto',padding:20}}>
+            <form onSubmit = {onSubmit} style={{width:1000,margin:'0 auto',padding:20}}>
+
+<div className="uk-width-1-2@s form">
+
             <p>
                    <input 
                    className="uk-input"
@@ -141,9 +142,9 @@ const RouteDisplay = ({saveLocation, onSubmit,onChange, handlePlace}) =>{
             />  
             </p> 
 
+</div>
 
-
-                <div className="uk-width-1-2@s">
+                <div className="uk-width-1-2@s form">
                 <p>
             <Autocomplete
                         name="stop1"
@@ -154,8 +155,7 @@ const RouteDisplay = ({saveLocation, onSubmit,onChange, handlePlace}) =>{
                         types={['establishment']}  
             />  
             </p> 
-                </div>
-                 <div className="uk-width-1-2@s">
+                
                  <p>
             <Autocomplete
                         name="stop2"
@@ -166,8 +166,7 @@ const RouteDisplay = ({saveLocation, onSubmit,onChange, handlePlace}) =>{
                         types={['establishment']}  
             />  
             </p> 
-                </div>
-                <div className="uk-width-1-2@s">
+               
                     
             <p>
             <Autocomplete
@@ -179,10 +178,7 @@ const RouteDisplay = ({saveLocation, onSubmit,onChange, handlePlace}) =>{
                         types={['establishment']}  
             />  
             </p> 
-                </div>
-
-
-                 <div className="uk-width-1-2@s">
+                
                  <p>
             <Autocomplete
                         name="stop4"
@@ -193,8 +189,7 @@ const RouteDisplay = ({saveLocation, onSubmit,onChange, handlePlace}) =>{
                         types={['establishment']}  
             />  
             </p> 
-                </div>
-                <div className="uk-width-1-2@s">
+    
                 <p>
             <Autocomplete
                         name="stop5"

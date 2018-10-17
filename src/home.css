@@ -37,7 +37,36 @@
     position:absolute;
     left:0;
     right:0;
-    top:45%;
+    top:40%;
+}
+
+.hero-content h1 {
+    font-weight:700;
+}
+
+#how svg {
+    width: 60px;
+    color: #fff;
+}
+
+.uk-navbar-right {
+    float: right;
+}
+
+.uk-navbar-container:not(.uk-navbar-transparent) {
+    background: none !important;
+}
+#footer.uk-section-secondary{
+    padding:10px 0 !important
+}
+
+.logo-footer{
+    float: left;
+}
+
+img.logo-footer {
+    width: 170px;
+    padding:15px 0;
 }
 
 
@@ -52,11 +81,11 @@ img.marker {
 }
 @-webkit-keyframes mover {
     0% { transform: translateY(0); }
-    100% { transform: translateY(-10px); }
+    100% { transform: translateY(-20px); }
 }
 @keyframes mover {
     0% { transform: translateY(0); }
-    100% { transform: translateY(-10px); }
+    100% { transform: translateY(-20px); }
 }
 
 #about .uk-flex-center {

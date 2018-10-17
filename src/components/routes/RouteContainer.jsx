@@ -63,7 +63,7 @@ class RouteContainer extends Component {
     .then (route=>{
         console.log (route)
         toastr.success ('Ruta Creada')
-        this.props.history.push('/routes-list')
+        this.props.history.push('/profile')
     })
     .catch(e=>toastr.error('Error'))
 }

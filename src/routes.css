@@ -81,9 +81,39 @@ i {
     text-align:left;
 }
 
+.hero-content-ruta {
+    top: 18%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: rgba(229, 67, 53, 0.83);
+    padding: 50px 30px;
+    border-radius: 15px;
+    width:60%;
+}
+
+.hero-content-ruta h2 , .hero-content-ruta p , .hero-content-ruta h3 {
+    color:#fff;
+}
+
+ul.uk-navbar-nav:last-child {
+    text-transform: uppercase;
+    font-size: 14px;
+    height: auto;
+    vertical-align: middle;
+    align-items: center;
+    color: #178e11;
+    font-weight: 600;
+}
 
 
-
+@media (min-width: 640px){
+.uk-width-1-2\@s.form {
+    width: 45%;
+    float: left;
+    margin: 0 10px;
+}
+}
 
 
 @media (min-width: 960px){
