@@ -3,8 +3,9 @@ import Rating from "./Rating"
 import RestaurantMapContainer from  './RestaurantMapContainer'
 import '../../../src/routes.css';
 import {Link} from 'react-router-dom'
+import { Modal, Button } from 'antd';
 
-const RouteDetailDisplay = ({routes,user,saveRoute}) =>{
+const RouteDetailDisplay = ({visible,handleOk,handleCancel,showModal,title, description, stops=[],price,stopsQuantity,category,location ,user,saveRoute}) =>{
     return (
         <div>
             <div className="inner-background">
@@ -40,22 +41,28 @@ const RouteDetailDisplay = ({routes,user,saveRoute}) =>{
               <div className="uk-container">
                 <div className="uk-grid-large uk-child-width-expand@s" uk-grid="true">
                     <div className="uk-width-1-2@m about-content">
-                        <h2>{routes.title}</h2>
+                        <h2>{title}</h2>
                         <Rating 
                         />
-                        <p>{routes.description}</p>
-                        <h5>Numero de paradas: {routes.stopsQuantity}</h5>
-                        <h5>Categoria: {routes.category}</h5>
-                        <h5>Locacion: {routes.location}</h5>
-                        <h5>Precio: {routes.price}</h5>
+                        <p>{description}</p>
+                        <h5>Numero de paradas: {stopsQuantity}</h5>
+                        <h5>Categoria: {category}</h5>
+                        <h5>Locacion: {location}</h5>
+                        <h5>Precio: {price}</h5>
                         <br/>
                         <button className="uk-button uk-button-large uk-button-primary" onClick={saveRoute} >Guardar Ruta</button>
                     </div>
                     <div className="uk-width-1-2@m ">
                     <div className="uk-background-primary route-stops">
-                        <h3 >Lugares de ruta</h3>
+                        <h3 >Lugares de la Ruta</h3>
                         <ul className="uk-text-left">
-                            <li>{routes.stops}</li>
+                            <div>{stops.map((r,key)=>(<div key ={key}> 
+                            <h4>{r.name}</h4>
+                            <p>Rating: {r.rating}</p>
+                            
+                            </div>
+                            ))}      
+                            </div>
                         </ul>
                         </div>
                     </div>

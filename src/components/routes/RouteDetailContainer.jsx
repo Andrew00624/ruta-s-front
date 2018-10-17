@@ -57,7 +57,7 @@ class RouteDetailContainer extends Component {
         return (
             <div>
                 <RouteDetailDisplay
-                routes={routes} 
+                {...routes} 
                 user={user}
                 saveRoute = {this.saveRoute}
                 />

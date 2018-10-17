@@ -1,5 +1,6 @@
 import React from 'react';
-import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
+import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
+
 
 
 class GoogleMapsContainer extends React.Component {
@@ -15,6 +16,8 @@ class GoogleMapsContainer extends React.Component {
     this.onMarkerClick = this.onMarkerClick.bind(this);
     this.onMapClick = this.onMapClick.bind(this);
   }
+
+
   onMarkerClick = (props, marker, e) => {
     this.setState({
       selectedPlace: props,
@@ -54,28 +57,8 @@ class GoogleMapsContainer extends React.Component {
           position = {{ lat: 39.648209, lng: -75.711185 }}
           name = { 'Changing Colors Garage' }
         />
-        <InfoWindow
-          marker = { this.state.activeMarker }
-          visible = { this.state.showingInfoWindow }
-        >
-          <div>
-            <div
-              variant = 'headline'
-              component = 'h4'
-            >
-              Changing Colors Garage
-            </div>
-            <div
-              component = 'p'
-            >
-              98G Albe Dr Newark, DE 19702 <br />
-              302-293-8627
-            </div>
-          </div>
-        </InfoWindow>
       </Map>
     );
   }
 }
-export default GoogleApiWrapper({
-api: (process.env.API_KEY)})(GoogleMapsContainer)
+export default GoogleApiWrapper({api: ('AIzaSyD0iBJ86eZUGkhbuWhS7b4_B3-8cRYQgTQ')})(GoogleMapsContainer)

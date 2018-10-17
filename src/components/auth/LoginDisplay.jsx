@@ -1,13 +1,32 @@
 import React from 'react'
-import {Input,Button} from 'antd'
+import {Link} from 'react-router-dom'
 
 const LoginDisplay = ({onChange,onSubmit}) => {
     return (
         <div>
-            <form onSubmit={onSubmit} style={{width:600,margin:'0 auto',padding:20}}>
+        <div className="home-background">
+              <div className="menu uk-container">
+                <div className="uk-position-relative">
+                      <div className="uk-position-top">
+                          <nav className="uk-navbar-container uk-navbar-transparent" uk-navbar="true">
+                          <Link to={'/'}><img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  </Link>
+                              <div className="uk-navbar-right">
+                                  <ul className="uk-navbar-nav">
+                                      <li><Link to={"/login"}>Iniciar Sesion</Link></li>
+                                      <li><Link to={"/signup"}>Registrarse</Link></li>
+                                  </ul>
+                              </div>
+                          </nav>
+                      </div>
+                </div>
+              </div>
+              <div className="hero-content-login uk-container login">
+              <form onSubmit={onSubmit}>
                 <h2>Login</h2> 
                <p>
-                   <Input 
+                   <input 
+                   
+                   className="uk-input "
                    name="email"
                    placeholder="Tu Email"
                    type="email"
@@ -16,7 +35,8 @@ const LoginDisplay = ({onChange,onSubmit}) => {
                    />
                </p> 
                <p>
-                   <Input 
+                   <input 
+                   className="uk-input"
                    name="password"
                    placeholder="Tu Password"
                    type="password"
@@ -24,8 +44,10 @@ const LoginDisplay = ({onChange,onSubmit}) => {
                    
                    />
                </p> 
-               <Button type="primary" htmlType="submit">Iniciar Sesion</Button>
+               <button className="uk-button uk-button-large uk-button-primary" type="primary" htmlType="submit">Iniciar Sesion</button>
             </form>
+              </div>
+            </div>
         </div>
     )
 }

@@ -5,6 +5,24 @@
     position:relative;
 
 }
+
+/* .home-background img {
+    animation-name: escalar;
+    animation-duration: 15s;
+    animation-direction: reverse;
+    animation-timing-function: ease-in;
+    transform-origin: 100% 0;
+}
+
+
+
+@keyframes escalar {
+    0% {transform:scale(1);}
+    100%{transform:scale(1.2);}
+} */
+
+
+
 .menu{
     padding:30px;
 }

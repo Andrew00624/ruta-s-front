@@ -1,16 +1,37 @@
 import React from 'react'
 import {Input,Button} from 'antd'
 import Autocomplete from 'react-google-autocomplete';
+import {Link} from 'react-router-dom'
 
 
-const RouteDisplay = ({onSubmit,onChange}) =>{
+const RouteDisplay = ({saveLocation, onSubmit,onChange, handlePlace}) =>{
 
     return (
         <div>
-            <h2>Crear Ruta</h2>
+
+             <div className="home-background">
+              <div className="menu uk-container">
+                <div className="uk-position-relative">
+                      <div className="uk-position-top">
+                          <nav className="uk-navbar-container uk-navbar-transparent" uk-navbar="true">
+                          <Link to={'/'}><img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  </Link>
+                              <div className="uk-navbar-right">
+                                  <ul className="uk-navbar-nav">
+                                      <li><Link to={"/login"}>Iniciar Sesion</Link></li>
+                                      <li><Link to={"/signup"}>Registrarse</Link></li>
+                                  </ul>
+                              </div>
+                          </nav>
+                      </div>
+                </div>
+              </div>
+              <div className="hero-content-ruta uk-container ruta">
+             
+              <h2>Crear Ruta</h2>
             <form onSubmit = {onSubmit} style={{width:600,margin:'0 auto',padding:20}}>
             <p>
-                   <Input 
+                   <input 
+                   className="uk-input"
                    name="title"
                    placeholder="Titulo Ruta"
                    type="text"
@@ -18,7 +39,8 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
                    />
             </p> 
             <p>
-                   <Input 
+                   <input 
+                   className="uk-input"
                    name="description"
                    placeholder="Descripcion"
                    type="text"
@@ -27,57 +49,68 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
             </p> 
             <p>
                 <h3>Categoria</h3>
-            <label htmlFor="tradicional">Tradicional</label>
-                   <Input 
+
+
+
+            <label htmlFor="Tradicional">Tradicional
+                   <input 
                    name="category"
-                   id="tradicional"
+                   className="uk-radio"
+                   id="Tradicional"
                    type="radio"
                    value = "Tradicional"
-                   /> <br/>
-                   <label htmlFor="callejera">Callejera</label>
-                    <Input 
+                   onChange={onChange} 
+                   /> </label>
+                   <label htmlFor="Callejera">Callejera
+                    <input 
                    name="category"
-                   id="callejera"
+                   className="uk-radio"
+                   id="Callejera"
                    type="radio"
                    value = "Callejera"
                    onChange={onChange} 
-                   /> <br/>
-                   <label htmlFor="autor">Cocina de autor</label>
-                    <Input 
+                   /> </label>
+                   <label htmlFor="Autor">Chef
+                    <input 
                    name="category"
-                   id="autor"
+                   className="uk-radio"
+                   id="Autor"
                    type="radio"
-                   value = "Cocina de autor"
+                   value = "Autor"
                    onChange={onChange} 
-                   /> <br/>
-                   <label htmlFor="economico">Economico</label>
-                    <Input 
+                   /> </label>
+                   <label htmlFor="Economico">Economico
+                    <input 
                    name="category"
-                   id="economico"
+                   className="uk-radio"
+                   id="Economico"
                    type="radio"
                    value = "Economico"
                    onChange={onChange} 
-                   /> <br/>
-                   <label htmlFor="dulce">Dulce</label>
-                    <Input 
+                   /> </label>
+                   <label htmlFor="Dulce">Dulce
+                    <input 
                    name="category"
-                   id="dulce"
+                   className="uk-radio"
+                   id="Dulce"
                    type="radio"
                    value = "Dulce"
                    onChange={onChange} 
-                   /> <br/>
-                   <label htmlFor="bebidas">Bebidas</label>
-                    <Input 
+                   /> </label>
+                   <label htmlFor="Bebidas">Bebidas
+                    <input 
                    name="category"
-                   id="bebidas"
+                   className="uk-radio"
+                   id="Bebidas"
                    type="radio"
                    value = "Bebidas"
                    onChange={onChange} 
-                   />
+                   /> </label>
 
             </p> 
             <p>
-                   <Input 
+                   <input 
+                   className="uk-input"
                    name="stopsQuantity"
                    placeholder="Numero de paradas"
                    type="number"
@@ -85,7 +118,8 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
                    />
             </p> 
             <p>
-                   <Input 
+                   <input 
+                   className="uk-input"
                    name="price"
                    placeholder="Precio"
                    type="text"
@@ -96,6 +130,8 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
             <Autocomplete
               name="location"
                         style={{width: '100%'}}
+                        className="uk-input"
+                        onChange={onChange} 
                         onPlaceSelected={(place) => {
                         localStorage.setItem('city', place.formatted_address)
                         console.log(place);
@@ -105,60 +141,78 @@ const RouteDisplay = ({onSubmit,onChange}) =>{
             />  
             </p> 
 
-            <p>
+
+
+                <div className="uk-width-1-2@s">
+                <p>
             <Autocomplete
-              name="stops"
-                        style={{width: '100%'}}
-                        onPlaceSelected={(parada) => {
-                        localStorage.setItem('parada', parada.description)
-                        console.log(parada);
-                        }}
-                        types={['(establishment)']}  
+                        name="stop1"
+                        className="uk-input"
+                        placeholder="Lugar #1"
+                        
+                        onPlaceSelected={handlePlace}
+                        types={['establishment']}  
             />  
             </p> 
-            <p>
-                   <Input 
-                   name="stops"
-                   placeholder="Parada #1"
-                   type="text"
-                   onChange={onChange} 
-                   />
+                </div>
+                 <div className="uk-width-1-2@s">
+                 <p>
+            <Autocomplete
+                        name="stop2"
+                        className="uk-input"
+                        placeholder="Lugar #2"
+                        
+                        onPlaceSelected={handlePlace}
+                        types={['establishment']}  
+            />  
             </p> 
+                </div>
+                <div className="uk-width-1-2@s">
+                    
             <p>
-                   <Input 
-                   name="stops"
-                   placeholder="Parada #2"
-                   type="text"
-                   onChange={onChange} 
-                   />
+            <Autocomplete
+                        name="stop3"
+                        className="uk-input"
+                        placeholder="Lugar #3"
+                        
+                        onPlaceSelected={handlePlace}
+                        types={['establishment']}  
+            />  
             </p> 
-            <p>
-                   <Input 
-                   name="stops"
-                   placeholder="Parada #3"
-                   type="text"
-                   onChange={onChange} 
-                   />
-            </p> 
-            <p>
-                   <Input 
-                   name="stops"
-                   placeholder="Parada #4"
-                   type="text"
-                   onChange={onChange} 
-                   />
-            </p> 
-            <p>
-                   <Input 
-                   name="stops"
-                   placeholder="Parada #5"
-                   type="text"
-                   onChange={onChange} 
-                   />
-            </p> 
+                </div>
 
-            <Button type="primary" htmlType="submit">Crear Ruta</Button>
+
+                 <div className="uk-width-1-2@s">
+                 <p>
+            <Autocomplete
+                        name="stop4"
+                        className="uk-input"
+                        placeholder="Lugar #4"
+                        
+                        onPlaceSelected={handlePlace}
+                        types={['establishment']}  
+            />  
+            </p> 
+                </div>
+                <div className="uk-width-1-2@s">
+                <p>
+            <Autocomplete
+                        name="stop5"
+                        className="uk-input"
+                        placeholder="Lugar #5"
+                        
+                        onPlaceSelected={handlePlace}
+                        types={['establishment']}  
+            />  
+            </p> 
+                </div>
+
+            <button className="uk-button uk-button-large uk-button-primary" type="primary" htmlType="submit">Crear Ruta</button>
             </form>
+
+              </div>
+            </div>
+           
         </div>
     )
 }

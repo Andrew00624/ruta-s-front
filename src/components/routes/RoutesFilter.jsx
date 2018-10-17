@@ -64,28 +64,28 @@ class RoutesFilter extends Component {
               <section className="uk-section uk-section-muted">
               <div className="uk-container routes-cards">
               <div className="uk-grid">
-                            <div className="uk-width-1-3@m uk-card uk-card-default">
-                                <div className="uk-card-header">
-                                    <div className="uk-flex-middle" uk-grid='true'>
-                                        <div className="uk-width-expand">
-                                            <div>{routes.map((r, key)=>(<div key={key}>
-                                            <h2 className="uk-card-title uk-margin-remove-bottom">{r.title}</h2>
-                                            <Rating 
-                                                    />
-                                            <span>{r.category}</span>
-                                            </div>))}</div>
-                                        </div>
-                                    </div>
+              {routes.map((r,key)=>(<div key={key}> 
+                    <div class="uk-card uk-card-default uk-width-1-2@m">
+                        <div class="uk-card-header">
+                            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                <div class="uk-width-auto">
                                 </div>
-                                <div className="uk-card-body">
-                                    <p>{routes.map((r, key)=>(<span key={key}>{r.description}</span>))}</p>
-                                </div>
-                                <div className="uk-card-footer">
-                                    <p>{routes.map((r, key)=>(<div key={key}>
-                                    <Link to={'/route/'+ r._id} >Ver mas</Link>
-                                    </div>))}</p>
+                                <div class="uk-width-expand">
+                                <h2 className="uk-card-title uk-margin-remove-bottom">{r.title}</h2>
+                                <Rating/>
+                                <span>{r.category}</span>
                                 </div>
                             </div>
+                        </div>
+                        <div class="uk-card-body">
+                        <p>{r.description}</p>
+                        </div>
+                        <div class="uk-card-footer">
+                            <Link to={'/route/'+ r._id} >Ver mas</Link>
+                        </div>
+                    </div>
+              </div>))}
+              
                 </div>
                 </div>
                 </section>

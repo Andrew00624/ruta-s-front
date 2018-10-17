@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url = "http://localhost:3000/"
+const url = "https://rutas2018.herokuapp.com/"
 
 export const getUserData = (id) => {
     return axios.get(url + 'users/' + id)

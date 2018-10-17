@@ -52,6 +52,10 @@
     padding: 10px 40px;
 }
 
+.uk-card-default {
+    min-width:300px;
+}
+
 i {
     font-size: 22px;
 }

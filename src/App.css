@@ -31,7 +31,63 @@
   height: 70px;
 }
 
+
+.login {
+  background:rgba(229, 67, 53, 0.83);
+  padding: 50px 30px;
+  border-radius: 15px;
+  width: 50%;
+}
+
+.signup {
+  background:rgba(229, 67, 53, 0.83);
+  padding: 50px 30px;
+  border-radius: 15px;
+  width: 50%;
+}
+
+.login .uk-button-primary,.signup .uk-button-primary {
+  background:#fff !important;
+  color:#e54335 !important;
+}
  
+.login h2,.signup h2 {
+  font-weight:600;
+  color :#fff;
+}
+
+.hero-content-login{
+  position:absolute;
+  left:0;
+  right:0;
+  top:35%;
+}
+
+.hero-content-signup{
+  position:absolute;
+  left:0;
+  right:0;
+  top:28%;
+}
+
+.uk-input,input[type="text"],input[type="email"], input[type="password"], input[type="number"], textarea {
+  border-radius: 5px !important;
+  padding: 15px 15px !important;
+  max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.uk-radio {
+  margin: 0 5px !important;
+  background: #fff !important;
+}
+
+.uk-radio:checked {
+  background-color: #e54335 !important;
+  margin: 0 5px !important;
+}
+
 
 
 

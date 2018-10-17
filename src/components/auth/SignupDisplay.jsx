@@ -1,14 +1,32 @@
 import React from 'react'
-import {Input,Button} from 'antd'
+import {Link} from 'react-router-dom'
 
 
 const SignupDisplay = ({onChange,onSubmit}) => {
     return (
         <div>
-            <form onSubmit={onSubmit} style={{width:600,margin:'0 auto',padding:20}}>
+            <div className="home-background">
+              <div className="menu uk-container">
+                <div className="uk-position-relative">
+                      <div className="uk-position-top">
+                          <nav className="uk-navbar-container uk-navbar-transparent" uk-navbar="true">
+                          <Link to={'/'}><img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  </Link>
+                              <div className="uk-navbar-right">
+                                  <ul className="uk-navbar-nav">
+                                      <li><Link to={"/login"}>Iniciar Sesion</Link></li>
+                                      <li><Link to={"/signup"}>Registrarse</Link></li>
+                                  </ul>
+                              </div>
+                          </nav>
+                      </div>
+                </div>
+              </div>
+              <div className="hero-content-signup uk-container signup">
+              <form onSubmit={onSubmit} style={{width:600,margin:'0 auto',padding:20}}>
                 <h2>Sign Up</h2>
                <p>
-                   <Input 
+                   <input 
+                   className="uk-input"
                    name="username"
                    placeholder="Tu nombre de usuario"
                    type="text"
@@ -16,7 +34,8 @@ const SignupDisplay = ({onChange,onSubmit}) => {
                    />
                </p> 
                <p>
-                   <Input 
+                   <input 
+                   className="uk-input"
                    name="email"
                    placeholder="Tu Email"
                    type="email"
@@ -24,7 +43,8 @@ const SignupDisplay = ({onChange,onSubmit}) => {
                    />
                </p> 
                <p>
-                   <Input 
+                   <input 
+                   className="uk-input"
                    name="password"
                    placeholder="Tu Password"
                    type="password"
@@ -32,15 +52,18 @@ const SignupDisplay = ({onChange,onSubmit}) => {
                    />
                </p> 
                <p>
-                   <Input 
+                   <input 
+                   className="uk-input"
                    name="password2"
                    placeholder="Repite tu Password"
                    type="password"
                    onChange={onChange} 
                    />
                </p> 
-               <Button type="primary" htmlType="submit">Registrarse</Button>
+               <button className="uk-button uk-button-large uk-button-primary" type="primary" htmlType="submit">Registrarse</button>
             </form>
+              </div>
+            </div>
         </div>
     )
 }
