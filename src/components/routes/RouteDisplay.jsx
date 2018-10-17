@@ -3,21 +3,29 @@ import Autocomplete from 'react-google-autocomplete';
 import {Link} from 'react-router-dom'
 
 
-const RouteDisplay = ({saveLocation, onSubmit,onChange, handlePlace}) =>{
+const RouteDisplay = ({ onSubmit,onChange, handlePlace,user}) =>{
 
     return (
         <div>
-
              <div className="home-background">
               <div className="menu uk-container">
                 <div className="uk-position-relative">
                       <div className="uk-position-top">
-                          <nav className="uk-navbar-container uk-navbar-transparent" uk-navbar="true">
-                          <Link to={'/'}><img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  </Link>
+                      <nav className="uk-navbar-container uk-navbar-transparent" uk-navbar="true">
+                            <Link to={'/'}><img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  </Link>
                               <div className="uk-navbar-right">
                                   <ul className="uk-navbar-nav">
-                                      <li><Link to={"/login"}>Iniciar Sesion</Link></li>
-                                      <li><Link to={"/signup"}>Registrarse</Link></li>
+                                  <li><Link to={"/about"}>Acerca de Nosotros</Link></li>
+                                  <li><Link to={"/how"}>Como Funciona?</Link></li>
+                                      <li>{user.username}<span uk-icon="user"></span> 
+                                      <div uk-dropdown="true pos:bottom-right"  >
+                                            <ul className="uk-nav uk-dropdown-nav">
+                                                <li><Link  to={"/profile"}>Mi perfil</Link></li>
+                                                <li><Link to={"/create-route"}>Crear Ruta</Link></li>
+                                                <li><Link to={"#"}>Cerrar Sesion</Link></li>
+                                            </ul>
+                                        </div>
+                                      </li>
                                   </ul>
                               </div>
                           </nav>
@@ -43,7 +51,7 @@ const RouteDisplay = ({saveLocation, onSubmit,onChange, handlePlace}) =>{
                    <input 
                    className="uk-input"
                    name="description"
-                   placeholder="Descripcion"
+                   placeholder="Descripción"
                    type="text"
                    onChange={onChange} 
                    />
@@ -132,6 +140,7 @@ const RouteDisplay = ({saveLocation, onSubmit,onChange, handlePlace}) =>{
               name="location"
                         style={{width: '100%'}}
                         className="uk-input"
+                        placeholder="Ciudad"
                         onChange={onChange} 
                         onPlaceSelected={(place) => {
                         localStorage.setItem('city', place.formatted_address)

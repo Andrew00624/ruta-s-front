@@ -1,64 +1,64 @@
-import React from 'react';
-import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
+import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
+import '../../../src/routes.css';
 
 
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-class GoogleMapsContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      showingInfoWindow: false,
-      activeMarker: {},
-      selectedPlace: {}
-    }
-    
-    // binding this to event-handler functions
-    this.onMarkerClick = this.onMarkerClick.bind(this);
-    this.onMapClick = this.onMapClick.bind(this);
-  }
+class SimpleMap extends Component {
+  static defaultProps = {
+    center: {
+      lat: 19.3977655,
+      lng: -99.1713954
+    },
+    zoom: 12
+  };
 
-
-  onMarkerClick = (props, marker, e) => {
-    this.setState({
-      selectedPlace: props,
-      activeMarker: marker,
-      showingInfoWindow: true
-    });
-  }
-  onMapClick = (props) => {
-    if (this.state.showingInfoWindow) {
-      this.setState({
-        showingInfoWindow: false,
-        activeMarker: null
-      });
-    }
-  }
   render() {
-    const style = {
-      width: '100%',
-      height: '35vh',
-      'marginLeft': 'auto',
-      'marginRight': 'auto',
-      position:'relative'
-    }
     return (
-      <Map
-        item
-        xs = { 12 }
-        style = { style }
-        google = { this.props.google }
-        onClick = { this.onMapClick }
-        zoom = { 14 }
-        initialCenter = {{ lat: 39.648209, lng: -75.711185 }}
-      >
-        <Marker
-          onClick = { this.onMarkerClick }
-          title = { 'Changing Colors Garage' }
-          position = {{ lat: 39.648209, lng: -75.711185 }}
-          name = { 'Changing Colors Garage' }
-        />
-      </Map>
+      // Important! Always set the container height explicitly
+      <div style={{ height: '350px', width: '100%' }}>
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: 'AIzaSyB47Cyf6xOIxgFWi8-Y67geGWL6IpkjiDI' }}
+          defaultCenter={this.props.center}
+          defaultZoom={this.props.zoom}
+        >
+               
+          {/* <AnyReactComponent
+           className="map-marker"
+            lat={19.414296}
+            lng={-99.1734486}
+            text= {'El Pescadito'} 
+          />
+         
+           <AnyReactComponent
+           className="map-marker"
+            lat={19.3991522}
+            lng={-99.1705524}
+            text={'Las Tlayudas'}
+          />
+           <AnyReactComponent
+           className="map-marker"
+            lat={19.3622898}
+            lng={-99.1845339}
+            text={'El Rabanito'}
+          />
+           <AnyReactComponent
+           className="map-marker"
+            lat={20.5728811}
+            lng={-100.3610274}
+            text={'Toks'}
+          />
+           <AnyReactComponent
+           className="map-marker"
+            lat={19.394312}
+            lng={-99.1734187}
+            text={'Casa de tono'}
+          /> */}
+        </GoogleMapReact>
+      </div>
     );
   }
 }
-export default GoogleApiWrapper({api: ('AIzaSyD0iBJ86eZUGkhbuWhS7b4_B3-8cRYQgTQ')})(GoogleMapsContainer)
+
+export default SimpleMap;

@@ -1,5 +1,5 @@
  .home-background  {
-    background-image: url(https://res.cloudinary.com/dqdpblijd/image/upload/v1539533427/ruta-s/background.jpg);
+    background-image: url(https://res.cloudinary.com/dqdpblijd/image/upload/v1539783327/ruta-s/background.jpg);
     background-size:cover;
     height: 100vh;
     position:relative;
@@ -47,6 +47,11 @@
 #how svg {
     width: 60px;
     color: #fff;
+}
+
+#how-inner svg {
+    width: 60px;
+    color: #e54335;
 }
 
 .uk-navbar-right {

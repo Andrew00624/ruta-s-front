@@ -34,6 +34,7 @@
 
 .uk-search-large .uk-search-input {
     background: #fff !important;
+    border: 2px solid #c1c1c1;
 }
 
 .uk-search-large .uk-search-icon {
@@ -42,4 +43,8 @@
 
 .uk-search-large {
     width: 65% !important;
+}
+
+.buscador-content h1 {
+    font-weight: 700;
 }

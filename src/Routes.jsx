@@ -11,12 +11,16 @@ import RouteDetailContainer from './components/routes/RouteDetailContainer'
 import Categories from './components/routes/Categories'
 import Home from './components/Home'
 import Buscador from './components/Buscador'
+import About from './components/About'
+import HowitWorks from './components/HowitWorks'
 
 const Routes = () => {
     return (
         <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/buscador" component={Buscador} />
+            <Route path="/about" component={About} />
+            <Route path="/how" component={HowitWorks} />
             <Route path="/categories" component={Categories} />
             <Route path="/signup" component={SignupContainer} />
             <Route path="/login" component={LoginContainer} />

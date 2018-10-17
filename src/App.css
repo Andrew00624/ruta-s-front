@@ -46,8 +46,12 @@
   width: 50%;
 }
 
-.login .uk-button-primary,.signup .uk-button-primary {
+.login .uk-button-primary,.signup .uk-button-primary, .ruta .uk-button-primary,.section-image .uk-button-primary  {
   background:#fff !important;
+  color:#e54335 !important;
+}
+
+.section-image a {
   color:#e54335 !important;
 }
  
@@ -86,6 +90,25 @@
 .uk-radio:checked {
   background-color: #e54335 !important;
   margin: 0 5px !important;
+}
+
+.uk-navbar-nav>li>a {
+  color: #4c4c4c !important;
+  text-transform:capitalize !important;
+  font-size:18px !important;
+}
+.uk-dropdown {
+ left:85% !important;
+
+}
+
+#footer .uk-navbar-nav>li>a {
+  color: #fff !important;
+}
+
+h5 {
+  font-weight: 500 !important;
+  font-size: 18px !important;
 }
 
 

@@ -14,11 +14,11 @@ class App extends Component {
 
         <footer id="footer"className="uk-section uk-section-secondary">
             <nav class="uk-navbar-container uk-container" uk-navbar>
-            <img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo-footer"/>  
+            <img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539783325/ruta-s/logofooter.png" alt="Logo" className="logo-footer"/>  
 
                     <div class="uk-navbar-right">
                         <ul class="uk-navbar-nav">
-                        <li><Link to={"/login"}>Iniciar Sesion</Link></li>
+                        <li><Link to={"/login"}>Iniciar Sesión</Link></li>
                         <li><Link to={"/signup"}>Registrarse</Link></li>
                         </ul>
 

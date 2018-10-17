@@ -55,17 +55,17 @@ class GoogleSuggest extends React.Component {
                 <div className="uk-position-relative">
                       <div className="uk-position-top">
                           <nav className="uk-navbar-container uk-navbar-transparent" uk-navbar="true">
-                              <img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  
+                          <Link to={'/'}><img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  </Link>
                               <div className="uk-navbar-right">
                                   <ul className="uk-navbar-nav">
                                   <li><Link to={"/about"}>Acerca de Nosotros</Link></li>
-                                  <li><Link to={"/how"}>Como Funciona?</Link></li>
+                                  <li><Link to={"/how"}>¿Cómo Funciona?</Link></li>
                                       <li>{user.username}<span uk-icon="user"></span> 
                                       <div uk-dropdown="true pos:bottom-right"  >
                                             <ul class="uk-nav uk-dropdown-nav">
                                                 <li><Link  to={"/profile"}>Mi perfil</Link></li>
                                                 <li><Link to={"/create-route"}>Crear Ruta</Link></li>
-                                                <li><Link to={"#"}>Cerrar Sesion</Link></li>
+                                                <li><Link to={"#"}>Cerrar Sesión</Link></li>
                                             </ul>
                                         </div>
                                       </li>
@@ -77,7 +77,7 @@ class GoogleSuggest extends React.Component {
               </div>
               </div>
             <div className="buscador-content uk-container">
-            <h1 >En que ciudad quieres comer hoy?</h1>
+            <h1 >¿En que ciudad quieres comer hoy?</h1>
             <br/>
               <ReactGooglePlacesSuggest
                 autocompletionRequest={{input: search}}

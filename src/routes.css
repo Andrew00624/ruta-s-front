@@ -1,5 +1,5 @@
 .inner-background  {
-    background-image: url(https://res.cloudinary.com/dqdpblijd/image/upload/v1539533427/ruta-s/background.jpg);
+    background-image: url(https://res.cloudinary.com/dqdpblijd/image/upload/v1539783327/ruta-s/background.jpg);
     background-size:cover;
     height: 50vh;
     position:relative;
@@ -13,6 +13,12 @@
     right:0;
     top:45%;
 }
+
+.inner-title h1 {
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
 .menu{
     padding:30px;
 }
@@ -29,7 +35,7 @@
 }
 
 .section-image{
-    background-image: url(https://res.cloudinary.com/dqdpblijd/image/upload/v1539533427/ruta-s/background_categories.png);
+    background-image: url(https://res.cloudinary.com/dqdpblijd/image/upload/v1539785715/ruta-s/background_categories.jpg);
     background-size:cover;
     background-attachment: fixed;
 }
@@ -97,14 +103,57 @@ i {
 }
 
 ul.uk-navbar-nav:last-child {
-    text-transform: uppercase;
-    font-size: 14px;
+    text-transform: capitalize;
+    font-size: 18px;
     height: auto;
     vertical-align: middle;
     align-items: center;
     color: #178e11;
     font-weight: 600;
 }
+
+.uk-background-primary.route-stops h3 {
+    font-weight: 700;
+    margin-bottom: 45px;
+}
+
+.uk-background-primary.route-stops h4 {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0;
+}
+.uk-background-primary.route-stops a,.uk-background-primary.route-stops a:hover {
+  color:#fff;
+  text-decoration:none;
+}
+
+.uk-background-primary.route-stops span {
+    font-size: 15px;
+}
+
+h2.uk-card-title {
+    font-weight: 700;
+}
+.uk-card-footer a,.uk-card-footer a:hover {
+    font-weight: 700;
+    color: #fff;
+    text-decoration:none;
+}
+
+.map-marker text {
+    background: #000;
+    color:#fff;
+}
+
+.lugares-div div {
+    border-top: 1px solid #f56053;
+    padding: 10px 0;
+}
+.lugares-div p {
+   margin-bottom:0px;
+}
+
+
 
 
 @media (min-width: 640px){

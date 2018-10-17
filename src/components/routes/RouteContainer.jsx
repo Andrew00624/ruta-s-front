@@ -14,11 +14,17 @@ class RouteContainer extends Component {
         routes:[],
         city: "",
         lugares:[],
-        visible: false
+        visible: false,
+        user:{}
     }
 
-    saveLocation = (lat, lng, name) => {
-        const place = {lat,lng,name}
+    componentWillMount(){
+        const user = JSON.parse(localStorage.getItem('user'))
+        this.setState({user})
+    }
+
+    saveLocation = (lat, lng, name,url) => {
+        const place = {lat,lng,name,url}
         const {lugares} = this.state
         lugares.unshift(place)
         this.setState({lugares})
@@ -44,10 +50,6 @@ class RouteContainer extends Component {
         });
       }
 
-
-    //1. dibujar un mapa solo! 1
-    //2. usar lugares y recorrerlos (map) colocar un marker
-
     
     createRoute = (e) =>{
     e.preventDefault()
@@ -63,7 +65,7 @@ class RouteContainer extends Component {
     .then (route=>{
         console.log (route)
         toastr.success ('Ruta Creada')
-        this.props.history.push('/profile')
+        
     })
     .catch(e=>toastr.error('Error'))
 }
@@ -80,7 +82,7 @@ handlePlace=(place)=>{
     console.log(place)
     const {route} = this.state
     const {stops} = route
-    const stop = {name:place.name, lat:place.geometry.location.lat(), lng:place.geometry.location.lng(),rating:place.rating,website:place.website}
+    const stop = {name:place.name, lat:place.geometry.location.lat(), lng:place.geometry.location.lng(),rating:place.rating,url:place.url}
     stops.push(stop)
     this.setState({route})
     console.log(route)
@@ -101,7 +103,7 @@ onSuggestSelect(suggest) {
 
         console.log(this.state.lugares)
 
-        const {route,lugares,visible} = this.state
+        const {route,lugares,visible,user} = this.state
         console.log(this.state.city)
         return (
             <div>
@@ -117,10 +119,8 @@ onSuggestSelect(suggest) {
                     handleOk={this.handleOk}
                     handleCancel={this.handleCancel}
                     visible={visible}
+                    user={user}
                 />   
-
-
-
 
             </div>
         )

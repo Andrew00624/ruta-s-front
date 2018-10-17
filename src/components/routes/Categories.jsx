@@ -35,13 +35,13 @@ import {Link} from 'react-router-dom'
                               <div className="uk-navbar-right">
                                   <ul className="uk-navbar-nav">
                                   <li><Link to={"/about"}>Acerca de Nosotros</Link></li>
-                                  <li><Link to={"/how"}>Como Funciona?</Link></li>
+                                  <li><Link to={"/how"}>¿Cómo Funciona?</Link></li>
                                       <li>{user.username}<span uk-icon="user"></span> 
                                       <div uk-dropdown="true pos:bottom-right"  >
                                             <ul class="uk-nav uk-dropdown-nav">
                                                 <li><Link  to={"/profile"}>Mi perfil</Link></li>
                                                 <li><Link to={"/create-route"}>Crear Ruta</Link></li>
-                                                <li><Link to={"#"}>Cerrar Sesion</Link></li>
+                                                <li><Link to={"#"}>Cerrar Sesión</Link></li>
                                             </ul>
                                         </div>
                                       </li>
@@ -54,6 +54,7 @@ import {Link} from 'react-router-dom'
             </div>
               <div className="category-content uk-container">
                 <h1>Elije Una Categoria</h1>
+                <br/>
                 <div className="categories-buttons">
                     <div className="uk-inline-clip uk-transition-toggle" tabindex="0">
                         <img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533430/ruta-s/button6_gray.png" onClick={()=>this.redirect('Tradicional')} name="tradicional" value="tradicional" alt=""/>
@@ -68,12 +69,12 @@ import {Link} from 'react-router-dom'
                     <div className="uk-inline-clip uk-transition-toggle" tabindex="0">
                         <img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533429/ruta-s/button4_gray.png" onClick={()=>this.redirect('Economico')} name="economico" value="economico" alt=""/>  
                         <img className="uk-transition-fade uk-position-cover" src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533430/ruta-s/button4.png" onClick={()=>this.redirect('Economico')} alt=""/>
-                        <h3>Economico</h3>
+                        <h3>Económico</h3>
                      </div>
                     <div className="uk-inline-clip uk-transition-toggle" tabindex="0">
                         <img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533427/ruta-s/button3_gray.png" onClick={()=>this.redirect('Dulce')} name="dulce" value="dulce" alt=""/>  
                         <img className="uk-transition-fade uk-position-cover" src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533430/ruta-s/button3.png" onClick={()=>this.redirect('Dulce')} name="dulce" value="dulce" alt=""/>
-                        <h3> Dulce</h3>
+                        <h3>Dulce</h3>
                       </div>
                     <div className="uk-inline-clip uk-transition-toggle" tabindex="0">
                         <img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533427/ruta-s/button2_gray.png" onClick={()=>this.redirect('Bebidas')} name="bebidas" value="bebidas" alt=""/> 

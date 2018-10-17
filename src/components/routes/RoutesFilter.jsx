@@ -44,13 +44,13 @@ class RoutesFilter extends Component {
                               <div className="uk-navbar-right">
                                   <ul className="uk-navbar-nav">
                                   <li><Link to={"/about"}>Acerca de Nosotros</Link></li>
-                                  <li><Link to={"/how"}>Como Funciona?</Link></li>
+                                  <li><Link to={"/how"}>¿Cómo Funciona?</Link></li>
                                       <li>{user.username}<span uk-icon="user"></span> 
                                       <div uk-dropdown="true pos:bottom-right"  >
                                             <ul class="uk-nav uk-dropdown-nav">
                                                 <li><Link  to={"/profile"}>Mi perfil</Link></li>
                                                 <li><Link to={"/create-route"}>Crear Ruta</Link></li>
-                                                <li><Link to={"#"}>Cerrar Sesion</Link></li>
+                                                <li><Link to={"#"}>Cerrar Sesión</Link></li>
                                             </ul>
                                         </div>
                                       </li>
@@ -81,7 +81,7 @@ class RoutesFilter extends Component {
                         <p>{r.description}</p>
                         </div>
                         <div class="uk-card-footer">
-                            <Link to={'/route/'+ r._id} >Ver mas</Link>
+                            <Link to={'/route/'+ r._id} >Ver Detalle</Link>
                         </div>
                     </div>
               </div>))}
@@ -92,16 +92,11 @@ class RoutesFilter extends Component {
 
                 <section className="uk-section-large uk-light uk-background-cover section-image">
                 <div className="uk-container">
-                    <h1>Ejemplo</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit alias sapiente tempora obcaecati nisi unde, optio perferendis nostrum odio maiores ex vero. Nesciunt autem quos quidem, esse suscipit alias at.</p>
-                    <buton className="uk-button uk-button-large uk-button-primary">Categories</buton>
+                    <h1>Más opciones recomendadas por nuestros usuarios</h1>
+                    <h4>Consulta las diferentes categorias que tenemos para ofrecerte</h4>
+                    <buton className="uk-button uk-button-large uk-button-primary">  <Link to={'/categories'} > Categorias </Link></buton>
                     </div>
                 </section>
-
-                <section className="uk-section-secondary">
-                    <div>Footer</div>
-                </section>
-
             </div>
 
 

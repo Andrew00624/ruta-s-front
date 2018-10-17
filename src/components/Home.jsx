@@ -15,7 +15,9 @@ class Home extends Component {
                               <img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  
                               <div className="uk-navbar-right">
                                   <ul className="uk-navbar-nav">
-                                      <li><Link to={"/login"}>Iniciar Sesion</Link></li>
+                                  <li><Link to={"/about"}>Acerca de Nosotros</Link></li>
+                                  <li><Link to={"/how"}>¿Cómo Funciona?</Link></li>
+                                      <li><Link to={"/login"}>Iniciar Sesión</Link></li>
                                       <li><Link to={"/signup"}>Registrarse</Link></li>
                                   </ul>
                               </div>
@@ -55,7 +57,7 @@ class Home extends Component {
                 <div className="uk-grid-medium uk-child-width-expand@s uk-text-center" uk-grid="true">
                     <div>
                     <span uk-icon="user"></span>
-                        <h3>Registrate en la plataforma</h3>
+                        <h3>Regístrate en la plataforma</h3>
                     </div>
                     <div>
                     <span uk-icon="location"></span>

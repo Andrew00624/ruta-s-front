@@ -13,7 +13,9 @@ const SignupDisplay = ({onChange,onSubmit}) => {
                           <Link to={'/'}><img src="https://res.cloudinary.com/dqdpblijd/image/upload/v1539533431/ruta-s/logo.png" alt="Logo" className="logo"/>  </Link>
                               <div className="uk-navbar-right">
                                   <ul className="uk-navbar-nav">
-                                      <li><Link to={"/login"}>Iniciar Sesion</Link></li>
+                                  <li><Link to={"/about"}>Acerca de Nosotros</Link></li>
+                                  <li><Link to={"/how"}>¿Cómo Funciona?</Link></li>
+                                      <li><Link to={"/login"}>Iniciar Sesión</Link></li>
                                       <li><Link to={"/signup"}>Registrarse</Link></li>
                                   </ul>
                               </div>
@@ -23,7 +25,7 @@ const SignupDisplay = ({onChange,onSubmit}) => {
               </div>
               <div className="hero-content-signup uk-container signup">
               <form onSubmit={onSubmit} style={{width:600,margin:'0 auto',padding:20}}>
-                <h2>Sign Up</h2>
+                <h2>Registrarse</h2>
                <p>
                    <input 
                    className="uk-input"

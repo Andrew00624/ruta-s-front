@@ -16,3 +16,7 @@
 .categories-buttons img{
     cursor: pointer;
 }
+
+.category-content h1 , .category-content h3{
+    font-weight:700
+}

@@ -3,9 +3,8 @@ import Rating from "./Rating"
 import RestaurantMapContainer from  './RestaurantMapContainer'
 import '../../../src/routes.css';
 import {Link} from 'react-router-dom'
-import { Modal, Button } from 'antd';
 
-const RouteDetailDisplay = ({visible,handleOk,handleCancel,showModal,title, description, stops=[],price,stopsQuantity,category,location ,user,saveRoute}) =>{
+const RouteDetailDisplay = ({title, description, stops=[],price,stopsQuantity,category,location ,user,saveRoute}) =>{
     return (
         <div>
             <div className="inner-background">
@@ -20,13 +19,13 @@ const RouteDetailDisplay = ({visible,handleOk,handleCancel,showModal,title, desc
                               <div className="uk-navbar-right">
                                   <ul className="uk-navbar-nav">
                                   <li><Link to={"/about"}>Acerca de Nosotros</Link></li>
-                                  <li><Link to={"/how"}>Como Funciona?</Link></li>
+                                  <li><Link to={"/how"}>¿Cómo Funciona?</Link></li>
                                       <li>{user.username}<span uk-icon="user"></span> 
                                       <div uk-dropdown="true pos:bottom-right"  >
                                             <ul className="uk-nav uk-dropdown-nav">
                                                 <li><Link  to={"/profile"}>Mi perfil</Link></li>
                                                 <li><Link to={"/create-route"}>Crear Ruta</Link></li>
-                                                <li><Link to={"#"}>Cerrar Sesion</Link></li>
+                                                <li><Link to={"#"}>Cerrar Sesión</Link></li>
                                             </ul>
                                         </div>
                                       </li>
@@ -44,10 +43,11 @@ const RouteDetailDisplay = ({visible,handleOk,handleCancel,showModal,title, desc
                         <h2>{title}</h2>
                         <Rating 
                         />
+                        <h5>Descripción</h5>
                         <p>{description}</p>
-                        <h5>Numero de paradas: {stopsQuantity}</h5>
-                        <h5>Categoria: {category}</h5>
-                        <h5>Locacion: {location}</h5>
+                        <h5>Número de paradas: {stopsQuantity}</h5>
+                        <h5>Categoría: {category}</h5>
+                        <h5>Locación: {location}</h5>
                         <h5>Precio: {price}</h5>
                         <br/>
                         <button className="uk-button uk-button-large uk-button-primary" onClick={saveRoute} >Guardar Ruta</button>
@@ -56,9 +56,10 @@ const RouteDetailDisplay = ({visible,handleOk,handleCancel,showModal,title, desc
                     <div className="uk-background-primary route-stops">
                         <h3 >Lugares de la Ruta</h3>
                         <ul className="uk-text-left">
-                            <div>{stops.map((r,key)=>(<div key ={key}> 
-                            <h4>{r.name}</h4>
-                            <p>Rating: {r.rating}</p>
+                            <div className="lugares-div">{stops.map((r,key)=>(<div key ={key}> 
+                            <h4> Lugar: {r.name}</h4>
+                            <span>Rating: {r.rating}</span>
+                            <p><a href={r.url} target="blank" >Más Información</a><span uk-icon="chevron-right"></span></p>
                             
                             </div>
                             ))}      
@@ -74,16 +75,14 @@ const RouteDetailDisplay = ({visible,handleOk,handleCancel,showModal,title, desc
                         <RestaurantMapContainer />
                     </div>
                 </section>
-              <section className="uk-section-large uk-light uk-background-cover section-image">
-                    <div className="uk-container">
-                        <h1>Ejemplo</h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit alias sapiente tempora obcaecati nisi unde, optio perferendis nostrum odio maiores ex vero. Nesciunt autem quos quidem, esse suscipit alias at.</p>
-                        <button className="uk-button uk-button-large uk-button-primary">Categories</button>
+                <section className="uk-section-large uk-light uk-background-cover section-image">
+                <div className="uk-container">
+                    <h1>Más opciones recomendadas por nuestros usuarios</h1>
+                    <h4>Consulta las diferentes categorias que tenemos para ofrecerte</h4>
+                    <buton className="uk-button uk-button-large uk-button-primary">  <Link to={'/categories'} > Categorias </Link></buton>
                     </div>
-              </section>
-              <section className="uk-section-secondary">
-                    <div>Footer</div>
                 </section>
+
         </div>
     )
 }
